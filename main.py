@@ -24,6 +24,7 @@ starting_pitcher_stat.rename(columns={'연봉': 'salary','이닝':'inning'}, inp
 relief_pitcher_stat.rename(columns={'연봉': 'salary','이닝':'inning'}, inplace=True)
 all_injure.rename(columns={'기간':'injured date','연봉 차액':'salary up and down'},inplace=True)
 all_player.rename(columns={'손잡이':'handedness','연봉':'salary','나이':'age'},inplace=True)
+all_player['handedness'] = all_player['handedness'].replace({'좌': 'Left', '우': 'Right'})
 # Streamlit app title
 st.title('KBO 연봉 분석과 예측')
 

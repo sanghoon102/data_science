@@ -400,8 +400,22 @@ elif selected_option == '연봉 예측':
         if st.button('타자 연봉 예측하기'):
             predicted_salary = batter_model.predict(new_data)
             if predicted_salary<2700:
+                st.write(f'타율: {batting_avg}')
+                st.write(f'출루율: {on_base_percentage}')
+                st.write(f'장타율: {slugging_percentage}')
+                st.write(f'홈런: {home_runs}')
+                st.write(f'war: {war}')
+                st.write(f'dWAR: {dwar}')
+                st.write('')
                 st.write(f"예측된 연봉: 2700(만원)")
             else:
+                st.write(f'타율: {batting_avg}')
+                st.write(f'출루율: {on_base_percentage}')
+                st.write(f'장타율: {slugging_percentage}')
+                st.write(f'홈런: {home_runs}')
+                st.write(f'war: {war}')
+                st.write(f'dWAR: {dwar}')
+                st.write('')
                 st.write(f"예측된 연봉: {predicted_salary[0]:,.0f} (만원)")
 
     # 투수 연봉 예측
@@ -450,6 +464,16 @@ elif selected_option == '연봉 예측':
         if st.button('투수 연봉 예측하기'):
             predicted_salary = pitcher_model.predict(new_data)
             if predicted_salary<2700:
+                st.write(f'이닝: {inning}')
+                st.write(f'ERA: {ERA}')
+                st.write(f'WHIP: {WHIP}')
+                st.write(f'FIP: {FIP}')
+                st.write(f'war: {war}')
                 st.write(f"예측된 연봉: 2700(만원)")
             else:
+                st.write(f'이닝: {inning}')
+                st.write(f'ERA: {ERA}')
+                st.write(f'WHIP: {WHIP}')
+                st.write(f'FIP: {FIP}')
+                st.write(f'war: {war}')
                 st.write(f"예측된 연봉: {predicted_salary[0]:,.0f} (만원)")
